@@ -10,7 +10,7 @@ function App() {
     try {
       const response = await fetch('http://api.quotable.io/random');
       const data = await response.json();
-      setQuote(data.content); // Adjusted to match the Quotable API response structure
+      setQuote(data.content); 
     } catch (error) {
       console.error('Error fetching quote:', error);
     }
