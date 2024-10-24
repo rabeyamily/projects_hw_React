@@ -1,33 +1,124 @@
+body {
+  background-color: #f0f8ff;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Full screen height */
+  width: 100vw; /* Full screen width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .app {
   text-align: center;
+  width: 80vw; /* width */
+  max-width: 1200px; /* Maximum width for larger screens */
+  height: 80vh; /*  height */
+  max-height: 800px; /* Maximum height for larger screens */
   padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #4a90e2;
 }
 
 .input-section {
   margin-bottom: 20px;
 }
 
-input {
+input[type="text"] {
   padding: 10px;
   font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
 }
 
 button {
-  margin-left: 10px;
-  padding: 10px;
-  font-size: 16px;
+ margin-left:10px; 
+ padding:10px; 
+ font-size:16px; 
+ background-color:#4a90e2; 
+ color:white; 
+ border:none; 
+ border-radius:5px; 
+ cursor:pointer; 
+}
+
+button:hover{
+ background-color:#357ab8; 
 }
 
 ul {
-  list-style-type: none;
-  padding: 0;
+ list-style-type:none; 
+ padding:0; 
+ max-height: calc(100% - 250px); /* Adjust based on other content */
+ overflow-y:auto; /* Allow vertical scrolling */
 }
 
 li {
-  margin: 10px 0;
+ margin:10px auto; 
+ padding:10px; 
+ background-color:#f9f9f9; 
+ border-radius:5px; 
+ display:flex; 
+ justify-content:flex-start; 
+ align-items:center; 
 }
 
-button {
-  margin-left: 10px;
-  padding: 5px 10px;
+li input[type="checkbox"] {
+ margin-right:10px; /* Space between checkbox and text */
 }
+
+li span {
+ flex-grow:1;  
+ text-align:left;  
+}
+
+li button:nth-child(3),
+li button:nth-child(4) {
+ margin-left:5px;  
+ padding:10px;  
+ font-size:16px;  
+ background-color:#FFB6C1; /* Light pink background for up/down buttons */
+ color:white;  
+ border:none;  
+ border-radius:5px;  
+ cursor:pointer;  
+}
+
+/* Use arrow symbols for the buttons */
+li button:nth-child(3):before {
+ content:'\2191'; /* Up arrow */
+}
+li button:nth-child(4):before {
+ content:'\2193'; /* Down arrow */
+}
+
+li button:nth-child(3):hover,
+li button:nth-child(4):hover{
+ background-color:#FF69B4; /* Darker pink on hover */
+}
+
+.quote-box {
+ margin-top:20px;
+ padding:15px;
+ background-color:#e6e6fa;
+ border-radius:5px;
+ box-shadow:none;
+ width: calc(100% - 40px); /* Responsive width with fixed padding */
+ max-height:100px; /* Limit max height */
+ overflow:hidden; /* Hide overflow */
+ text-overflow:ellipsis; /* Add ellipsis for long quotes */
+ display:-webkit-box;
+ -webkit-box-orient:vertical;
+ -webkit-line-clamp:3; /* Limit to max 3 lines */
+}
+
+.quote {
+ font-style:italic;
+}
+
